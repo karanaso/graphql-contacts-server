@@ -1,7 +1,7 @@
 import Express from 'express';
 import AppConfig from './AppConfig';
 import GraphQLHTTP from 'express-graphql';
-import ContactsBundle from './Bundles/Contacts/index.js';
+import ContactsBundle from './Bundles/Contacts/ContactBundleIndex.js';
 import mongoose from 'mongoose';
 
 // initialize config
@@ -12,12 +12,12 @@ const connection = mongoose.connect( appConfig.getDBConnection() );
 
 //initialize ContactsBudnle
 const contactsBundle = new ContactsBundle( appConfig, connection );
-contactsBundle.runFaker(100);
+//contactsBundle.runFaker(100);
 
 const graphQLServer = Express();
 
 graphQLServer.use( '/gql', GraphQLHTTP({
-  schema : contactsBundle.graphQLSchema.schema() ,
+  schema : contactsBundle.graphQLSchema.schema(),
   graphiql : true,
   pretty : true
 }));
