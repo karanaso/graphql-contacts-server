@@ -9,8 +9,6 @@ export default class ContactsBundle {
     this.connection = connection;
     this.ContactsModel = new ContactsModel( config, connection );
     this.graphQLSchema = new ContactsGraphQLSchema( this.ContactsModel );
-
-    console.log(`ContactsBundle Initialized succesfully`);
   }
 
   runFaker = ( numberOfContactsToCreate ) => {
