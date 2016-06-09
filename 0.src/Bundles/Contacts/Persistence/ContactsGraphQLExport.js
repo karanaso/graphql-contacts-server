@@ -1,6 +1,6 @@
 import ContactsGraphQLQuery from './ContactsGraphQLQuery';
 
-export default class ContactsGraphQLSchema {
+export default class ContactsGraphQLExport {
 
   constructor( model ) {
     this.model = model;

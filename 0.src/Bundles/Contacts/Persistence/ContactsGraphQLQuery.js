@@ -3,14 +3,14 @@ import {
   GraphQLList
 } from 'graphql';
 
-import ContactsTypeQL from './ContactsTypeQL';
+import ContactsTypeQLSchema from './ContactsTypeQLSchema';
 
 export default class ContactsGraphQLQuery {
   constructor ( model ) {
     this.model = model;
     return {
       contacts : {
-        type : new GraphQLList( ContactsTypeQL ),
+        type : new GraphQLList( ContactsTypeQLSchema ),
         args : {
           _id : {
             type : GraphQLString

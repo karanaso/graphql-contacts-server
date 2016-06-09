@@ -22,7 +22,7 @@ const contactsBundle = new ContactsBundle( appConfig, connection );
 let RootQuery = new GraphQLObjectType({
   name : 'RootQuery',
   fields : () => ({
-    Contacts : contactsBundle.graphQLSchema.Query.contacts
+    Contacts : contactsBundle.graphQLExport.Query.contacts
   })
 });
 

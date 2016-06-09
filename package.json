@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install",
-    "develop": "babel-watch ./0.src/index.js",
+    "start": "babel-watch ./0.src/index.js",
     "build": "mkdir ./dist; babel --copy-files --compact --minified --source-maps false  ./0.src/index.js -o ./dist/bundle.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-register --require mocha $(find 0.src -name \"*.spec.js\")",
     "test-watch": "mocha --compilers js:babel-register --recursive --watch"
