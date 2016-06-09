@@ -1,4 +1,3 @@
-import {ContactsSchema} from './Persistence/ContactsSchema';
 import ContactsModel from './Persistence/ContactsModel';
 import ContactsGraphQLExport from './Persistence/ContactsGraphQLExport';
 import ContactsFaker from './Faker/ContactsFaker';
@@ -10,9 +9,9 @@ export default class ContactsBundle {
     this.ContactsModel = new ContactsModel( config, connection );
     this.graphQLExport = new ContactsGraphQLExport( this.ContactsModel );
   }
- 
+
   runFaker = ( numberOfContactsToCreate ) => {
-    let contactsFaker = new ContactsFaker( numberOfContactsToCreate, this.ContactsModel );
+    const contactsFaker = new ContactsFaker( numberOfContactsToCreate, this.ContactsModel );
     contactsFaker.run();
   }
 }

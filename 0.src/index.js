@@ -19,16 +19,25 @@ const contactsBundle = new ContactsBundle( appConfig, connection );
 // console.log(new Date());
 
 // You can assign multiple GraphQLSchemas from multiple Bundles
-let RootQuery = new GraphQLObjectType({
+const RootQuery = new GraphQLObjectType({
   name : 'RootQuery',
   fields : () => ({
-    Contacts : contactsBundle.graphQLExport.Query.contacts
+    ...contactsBundle.graphQLExport.getQueries()
   })
 });
 
-let Schema = new GraphQLSchema({
-  query : RootQuery
-})
+// You can assign multiple GraphQL Mutations from multiple bundles/Modules
+const RootMutations = new GraphQLObjectType({
+  name : 'RootMutations',
+  fields : () => ({
+    ...contactsBundle.graphQLExport.getMutations()
+  })
+});
+
+const Schema = new GraphQLSchema({
+  query : RootQuery,
+  mutation : RootMutations
+});
 
 const graphQLServer = Express();
 graphQLServer.use( '/gql', GraphQLHTTP({

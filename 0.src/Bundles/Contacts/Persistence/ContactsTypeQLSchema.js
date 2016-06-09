@@ -49,7 +49,7 @@ export default new GraphQLObjectType({
         description : 'The Notes of the personalInfo',
         resolve( personalInfo ) { return personalInfo.Lastname; }
       },
-      Business: {
+      Business : {
         type : new GraphQLObjectType({
         name : 'BusinessInfo',
         description : 'This is a Business',
@@ -61,48 +61,48 @@ export default new GraphQLObjectType({
               resolve( businessInfo ) { return businessInfo.CompanyName; }
             },
             JobDescription : {
-              type: GraphQLString,
-              description : 'The Notes of the businessInfo',
+              type : GraphQLString,
+              description : 'The JobDescription of the businessInfo',
               resolve( businessInfo ) { return businessInfo.JobDescription; }
             },
             Address : {
-              type: GraphQLString,
-              description : 'The Notes of the businessInfo',
+              type : GraphQLString,
+              description : 'The Address of the businessInfo',
               resolve( businessInfo ) { return businessInfo.Address; }
             },
             Town : {
               type: GraphQLString,
-              description : 'The Notes of the businessInfo',
+              description : 'The Town of the businessInfo',
               resolve( businessInfo ) { return businessInfo.Town; }
             },
             ZipCode : {
-              type: GraphQLString,
-              description : 'The Notes of the businessInfo',
+              type : GraphQLString,
+              description : 'The ZipCode of the businessInfo',
               resolve( businessInfo ) { return businessInfo.ZipCode; }
             },
             LandLine : {
               type : GraphQLString,
-              description : 'The Notes of the businessInfo',
+              description : 'The LandLine of the businessInfo',
               resolve( businessInfo ) { return businessInfo.LandLine; }
             },
             Mobile : {
               type : GraphQLString,
-              description : 'The Notes of the businessInfo',
+              description : 'The Mobile of the businessInfo',
               resolve( businessInfo ) { return businessInfo.Mobile; }
             },
             Email : {
               type : GraphQLString,
-              description : 'The Notes of the businessInfo',
+              description : 'The Email of the businessInfo',
               resolve( businessInfo ) { return businessInfo.Email; }
             },
             Skype : {
               type : GraphQLString,
-              description : 'The Notes of the businessInfo',
+              description : 'The Skype of the businessInfo',
               resolve( businessInfo ) { return businessInfo.Skype; }
             },
             MSN : {
               type : GraphQLString,
-              description : 'The Notes of the businessInfo',
+              description : 'The MSN of the businessInfo',
               resolve( businessInfo ) { return businessInfo.MSN; }
             }
           };
@@ -117,42 +117,42 @@ export default new GraphQLObjectType({
           return {
             Address : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The Address of the personalInfo',
               resolve( personalInfo ) { return personalInfo.Address; }
             },
             Town : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The Town of the personalInfo',
               resolve( personalInfo ) { return personalInfo.Town; }
             },
             ZipCode : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The ZipCode of the personalInfo',
               resolve( personalInfo ) { return personalInfo.ZipCode; }
             },
             LandLine : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The LandLine of the personalInfo',
               resolve( personalInfo ) { return personalInfo.LandLine; }
             },
             Mobile : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The Mobile of the personalInfo',
               resolve( personalInfo ) { return personalInfo.Mobile; }
             },
             Email : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The Email of the personalInfo',
               resolve( personalInfo ) { return personalInfo.Email; }
             },
             Skype : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The Skype of the personalInfo',
               resolve( personalInfo ) { return personalInfo.Skype; }
             },
             MSN : {
               type : GraphQLString,
-              description : 'The Notes of the personalInfo',
+              description : 'The MSN of the personalInfo',
               resolve( personalInfo ) { return personalInfo.MSN; }
             }
           };
