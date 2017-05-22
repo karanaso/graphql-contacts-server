@@ -13,19 +13,21 @@ export default class ContactsGraphQLMutations {
     this.model = model;
     return {
       // used both for insert and update
-      AddContact  : {
+      updateContact  : {
         type :  ContactsTypeQLSchema,
         args : {
-          firstName : {
+          id : {
             type : new GraphQLNonNull( GraphQLString )
           },
+          firstName : {
+            type : GraphQLString
+          }
         },
         resolve : ( root, args ) => {
-          console.log( args );
-          return this.model.findById("5751912c9bed706d1acd239d");
-          //return this.model.find({});
+          //update should be implemented
+          return this.model.findById( args.id );
         }
-      }
+      },
     };
   }
 }
