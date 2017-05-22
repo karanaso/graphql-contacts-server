@@ -14,4 +14,5 @@ export default class ContactsBundle {
     const contactsFaker = new ContactsFaker( numberOfContactsToCreate, this.ContactsModel );
     contactsFaker.run();
   }
+
 }

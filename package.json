@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install",
-    "start": "babel-watch ./0.src/index.js",
+    "faker": "node_modules/babel-cli/bin/babel-node.js 0.src/faker.js",
+    "start": "node_modules/babel-cli/bin/babel-node.js ./0.src/index.js",
+    "dev": "node_modules/babel-watch/babel-watch.js 0.src/index.js",
     "build": "mkdir ./dist; babel --copy-files --compact --minified --source-maps false  ./0.src/index.js -o ./dist/bundle.js",
     "test": "NODE_ENV=test mocha --compilers js:babel-register --require mocha $(find 0.src -name \"*.spec.js\")",
     "test-watch": "mocha --compilers js:babel-register --recursive --watch"
@@ -12,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.24.1",
     "express": "^4.13.4",
     "express-graphql": "^0.5.3",
     "graphiql": "^0.7.1",
@@ -21,6 +24,7 @@
     "mongoose": "^4.4.19"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-eslint": "^6.0.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-stage-0": "^6.5.0",

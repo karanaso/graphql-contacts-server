@@ -13,13 +13,9 @@ const connection = mongoose.connect( appConfig.getDBConnection() );
 
 // initialize ContactsBudnle
 const contactsBundle = new ContactsBundle( appConfig, connection );
-// if you wish to generate fake records, enable faker by uncommenting the line below
-// console.log(new Date());
-// contactsBundle.runFaker(10000);
-// console.log(new Date());
 
 // You can assign multiple GraphQLSchemas from multiple Bundles
-const RootQuery = new GraphQLObjectType({
+const RootQueries = new GraphQLObjectType({
   name : 'RootQuery',
   fields : () => ({
     ...contactsBundle.graphQLExport.getQueries()
@@ -35,7 +31,7 @@ const RootMutations = new GraphQLObjectType({
 });
 
 const Schema = new GraphQLSchema({
-  query : RootQuery,
+  query : RootQueries,
   mutation : RootMutations
 });
 
